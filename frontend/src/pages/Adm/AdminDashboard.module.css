@@ -22,7 +22,7 @@
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #0d477e;
     font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
     margin-bottom: 8px;
@@ -61,7 +61,7 @@
 }
 
 .statInfo h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
     color: #0d477e;
@@ -156,6 +156,7 @@ h2 {
 
 .recentHeader h2 {
     margin-bottom: 0;
+    font-size: 1.5rem;
 }
 
 .viewAllLink {

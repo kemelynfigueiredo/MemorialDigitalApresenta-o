@@ -92,7 +92,7 @@ export default function AdminDashboard() {
                     <div className={styles.dashboardGrid}>
                         {/* --- ATALHOS RÁPIDOS --- */}
                         <section className={styles.quickActions}>
-                            <h2 className={styles.title}>Ações Rápidas</h2>
+                            <h1 className={styles.title}>Ações Rápidas</h1>
                             <div className={styles.actionsGrid}>
                                 <Link to="/admin/memoriais" className={styles.actionButton}>
                                     <PlusCircle size={32} className={styles.actionIcon} />
@@ -114,7 +114,7 @@ export default function AdminDashboard() {
                             </div>
                         </section>
 
-                        {/* --- ÚLTIMOS CADASTROS (AGORA EM TABELA) --- */}
+                        {/* --- ÚLTIMOS CADASTROS --- */}
                         <section className={styles.recentActivity}>
                             <div className={styles.recentHeader}>
                                 <h2 className={styles.title}>Últimos Cadastros</h2>
@@ -129,7 +129,7 @@ export default function AdminDashboard() {
                                         <tr>
                                             <th>Nome do Falecido</th>
                                             <th>Localização</th>
-                                            <th className={styles.registroHeader}>Registro</th>
+                                            <th className={styles.registroHeader}>Data</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -160,7 +160,7 @@ export default function AdminDashboard() {
                                                 <td className={styles.timeCell}>
                                                     <span className={styles.timeContent}>
                                                         <Clock size={16} className={styles.clockIcon} />
-                                                        {memorial.data || '—'}
+                                                        {memorial.dataMorte || '—'}
                                                     </span>
                                                 </td>
                                             </tr>

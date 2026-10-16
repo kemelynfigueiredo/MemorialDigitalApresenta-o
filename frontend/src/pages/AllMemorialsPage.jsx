@@ -142,7 +142,7 @@ export default function MemorialsPage() {
             <div className={styles.page}>
                 <section className={styles.heroBanner}>
                     <div className={styles.container}>
-                        <h1>Nossos Memoriais</h1>
+                        <h1>Memoriais</h1>
                         <p>Carregando memoriais do servidor...</p>
                     </div>
                 </section>
@@ -154,7 +154,7 @@ export default function MemorialsPage() {
         <div className={styles.page}>
             <section className={styles.heroBanner}>
                 <div className={styles.container}>
-                    <h1>Nossos Memoriais</h1>
+                    <h1>Memoriais</h1>
 
                     <p>
                         Explore a história e as homenagens de pessoas que

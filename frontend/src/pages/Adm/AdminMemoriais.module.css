@@ -1,7 +1,7 @@
 .adminLayout {
     display: flex;
     min-height: 100vh;
-    background: #f4f8fd;
+    background: #f4f7f9;
 }
 
 /* --- Barra Lateral --- */
@@ -21,7 +21,7 @@
 
 .sidebarHeader h2 {
     font-size: 1.25rem;
-    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-family: 'Roboto', 'Inter', serif;
     color: #ffffff;
 }
 
@@ -94,7 +94,7 @@
     font-size: 2rem;
     color: #003366;
     margin-bottom: 4px;
-    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-family: 'Roboto', 'Inter', serif;
 }
 
 .subtitle {
@@ -106,7 +106,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    background: #1565c0;
+    background: #0066cc;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -118,12 +118,7 @@
 }
 
 .addButton:hover {
-    background: #0d477e;
-}
-
-.headerActions {
-    display: flex;
-    gap: 8px;
+    background: #004c99;
 }
 
 /* --- Estrutura da Tabela --- */
@@ -295,11 +290,8 @@
 }
 
 .modalHeader h2 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 1.25rem;
     color: #003366;
-    letter-spacing: -0.01em;
 }
 
 .closeBtn {
@@ -379,7 +371,7 @@
 
 .saveBtn {
     padding: 12px 24px;
-    background: #1565c0;
+    background: #0066cc;
     border: none;
     border-radius: 8px;
     color: #ffffff;
@@ -388,7 +380,7 @@
 }
 
 .saveBtn:hover {
-    background: #0d477e;
+    background: #004c99;
 }
 
 .nameCell div {
@@ -419,15 +411,27 @@
     color: #4b5563;
 }
 
-
 .modalContentLarge {
     background: #ffffff;
     width: 100%;
     max-width: 900px;
     border-radius: 16px;
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
+    overflow: hidden;          
     max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalContentLarge .modalHeader {
+    flex-shrink: 0;            
+}
+
+.modalBody {
+    flex: 1;
+    min-height: 0;            
+    overflow-y: auto;          
+    scrollbar-width: thin;
 }
 
 .modalContentSmall {
@@ -438,75 +442,6 @@
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
 }
 
-.confirmModal {
-    background: #ffffff;
-    width: 100%;
-    max-width: 420px;
-    border-radius: 16px;
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
-    padding: 36px 32px 28px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 12px;
-}
-
-.confirmIcon {
-    width: 56px;
-    height: 56px;
-    background: #fff0ee;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 4px;
-}
-
-.confirmTitle {
-    font-size: 1.2rem;
-    font-weight: 600;
-    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-    color: #1a1a2e;
-    margin: 0;
-    letter-spacing: -0.01em;
-}
-
-.confirmMessage {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.5;
-    margin: 0;
-}
-
-.confirmActions {
-    display: flex;
-    gap: 12px;
-    margin-top: 8px;
-    width: 100%;
-}
-
-.confirmActions .cancelBtn {
-    flex: 1;
-}
-
-.deleteConfirmBtn {
-    flex: 1;
-    padding: 12px 24px;
-    background: #cc2200;
-    border: none;
-    border-radius: 8px;
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.deleteConfirmBtn:hover {
-    background: #a81b00;
-}
-
 .formGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -515,12 +450,8 @@
 }
 
 .formCol h3 {
-    font-size: 0.8rem;
-    font-weight: 700;
-    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-    color: #0066cc;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    font-size: 1.1rem;
+    color: #003366;
     margin-bottom: 20px;
     padding-bottom: 8px;
     border-bottom: 1px solid #eaeaea;
@@ -551,6 +482,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.qrHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.qrHeader h2 {
+    font-size: 1.25rem;
+    color: #003366;
+    text-align: center;
+    flex: 1;
 }
 
 .qrContainer p {
@@ -627,124 +572,15 @@
 }
 
 .pageBtnActive {
-    background: #1565c0;
-    border-color: #1565c0;
+    background: #0066cc;
+    border-color: #0066cc;
     color: #ffffff;
 }
 
 .pageBtnActive:hover:not(:disabled) {
-    background: #0d477e;
-    border-color: #0d477e;
+    background: #004c99;
+    border-color: #004c99;
     color: #ffffff;
-}
-
-/* --- Botão Voltar --- */
-.backBtn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: none;
-    border: none;
-    color: #0066cc;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 0;
-    margin-bottom: 8px;
-    transition: color 0.2s;
-}
-
-.backBtn:hover {
-    color: #004c99;
-}
-
-/* --- Grid de Quadras/Lotes --- */
-.setoresGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
-}
-
-.setorCard {
-    background: #ffffff;
-    border: 1px solid #eaeaea;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.2s;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-}
-
-.setorCard:hover {
-    border-color: #b0d0f0;
-    box-shadow: 0 4px 16px rgba(0, 102, 204, 0.08);
-}
-
-.setorCardBtn {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    width: 100%;
-    padding: 20px 20px 16px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-}
-
-.setorCardBtn:hover {
-    background: #f8fbff;
-}
-
-.cardActions {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 4px;
-    padding: 8px 12px;
-    border-top: 1px solid #f4f6f8;
-}
-
-.cardActions .iconBtn {
-    padding: 7px;
-    margin-left: 0;
-    border-radius: 8px;
-}
-
-.cardActions .iconBtn:hover {
-    background: #f0f4f8;
-}
-
-.cardActions .deleteBtn:hover {
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-.setorIcon {
-    width: 56px;
-    height: 56px;
-    border-radius: 12px;
-    background: #f0f7ff;
-    color: #0066cc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.setorInfo h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-    color: #003366;
-    margin-bottom: 4px;
-    letter-spacing: -0.01em;
-}
-
-.setorInfo p {
-    font-size: 0.82rem;
-    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-    color: #888;
-    margin: 0;
 }
 
 /* --- Responsividade da Sidebar --- */
@@ -848,23 +684,10 @@
         gap: 0;
     }
 
-    .setoresGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .setorCardBtn {
-        padding: 16px;
-    }
-
-    .cardActions {
-        justify-content: center;
-    }
-
 }
 
 /* --- CONFIGURAÇÕES PARA A IMPRESSORA --- */
 @media print {
-    /* 1. Esconde a Sidebar (pela tag) e o Conteúdo Principal */
     aside,
     .mainContent,
     .closeBtn,
@@ -872,13 +695,11 @@
         display: none !important;
     }
 
-    /* 2. Tira o layout Flexbox que estava empurrando para a direita */
     .adminLayout {
         display: block !important;
         background: white !important;
     }
 
-    /* 3. Transforma o fundo transparente do modal em uma folha branca limpa */
     .modalOverlay {
         position: absolute !important;
         top: 0 !important;
@@ -892,13 +713,14 @@
         justify-content: center !important;
         padding-top: 40px !important;
         margin: 0 !important;
+        text-align: center !important;
     }
 
-    /* 4. Estilo de placa profissional para o QR Code */
     .modalContentSmall {
         box-shadow: none !important;
         border: 2px solid #003366 !important;
         padding: 40px !important;
         margin: 0 !important;
+        text-align: center !important;
     }
 }

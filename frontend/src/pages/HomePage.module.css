@@ -1,771 +1,30 @@
-/* ===================================================
-   HOMEPAGE — Design baseado no protótipo institucional
-   =================================================== */
-
 .page {
   min-height: 100vh;
   background: #fbf9f8;
   font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
 
-/* --- HERO (tela cheia) --- */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: visible;
-}
-
-.heroBg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.heroBgImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.05);
-}
-
-.heroOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,32,70,0.62) 0%, rgba(0,32,70,0.88) 100%);
-}
-
-.heroContent {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  padding: 0 24px;
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.heroTitle {
-  font-family: 'Cormorant Garamond', 'Georgia', serif;
-  font-size: clamp(1.8rem, 3.4vw, 3.2rem);
-  font-weight: 600;
-  color: #ffffff;
-  margin: 0 0 20px;
-  line-height: 1.15;
-  letter-spacing: 0.02em;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-}
-
-.heroTitleGold {
-  color: #ffdea5;
-  display: block;
-  font-size: clamp(2.8rem, 5.5vw, 5rem);
-  line-height: 1.1;
-}
-
-.heroSubtitle {
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.88);
-  line-height: 1.7;
-  max-width: 640px;
-  margin: 0 auto 48px;
-}
-
-.searchBarWrapper {
-  position: relative;
-  max-width: 680px;
-  margin: 0 auto;
-}
-
-/* Barra de busca premium */
-.searchBar {
-  display: flex;
-  align-items: center;
-  background: #ffffff;
-  border-radius: 100px;
-  padding: 6px 6px 6px 24px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-  gap: 8px;
-}
-
-.searchBarIcon {
-  color: #74777f;
-  flex-shrink: 0;
-}
-
-.searchBar input {
-  flex: 1;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  color: #002046;
-  background: transparent;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  padding: 10px 0;
-}
-
-.searchBar input::placeholder {
-  color: #74777f;
-}
-
-.clearSearch {
-  background: #f0eded;
-  border: none;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  color: #74777f;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.searchButton {
-  background: #002046;
-  color: #ffffff;
-  border: none;
-  border-radius: 100px;
-  padding: 0 32px;
-  height: 52px;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s, transform 0.15s;
-  flex-shrink: 0;
-}
-
-.searchButton:hover {
-  background: #1b365d;
-}
-
-.searchResults {
-  position: absolute;
-  top: calc(100% + 12px);
-  left: 0;
-  right: 0;
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
-  z-index: 30;
-}
-
-.resultItem {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  padding: 12px 16px;
-  text-decoration: none;
-  color: #1b1c1c;
-  border-bottom: 1px solid #f0eded;
-  transition: background 0.15s;
-}
-
-.resultItem:hover { background: #f0eded; }
-
-.resultItem img {
-  width: 44px;
-  height: 44px;
-  border-radius: 6px;
-  object-fit: cover;
-}
-
-.viewAll {
-  width: 100%;
-  padding: 14px;
-  background: #f6f3f2;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  color: #002046;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  font-size: 0.9rem;
-}
-
-.viewAll:hover { background: #eae8e7; }
-
-.heroScrollHint {
-  position: absolute;
-  bottom: 36px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(255,255,255,0.4);
-  animation: bounce 2s infinite;
-  font-size: 2rem;
-  user-select: none;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(10px); }
-}
-
-/* --- SECTIONS --- */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* --- SEÇÃO 1: Figuras Históricas --- */
-.sectionHistorical {
-  padding: 96px 0;
-  background: #fbf9f8;
-}
-
-.sectionHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 56px;
-}
-
-.sectionEyebrow {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #775a19;
-  margin-bottom: 8px;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-}
-
-.sectionTitle {
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 700;
-  color: #002046;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.sectionLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #002046;
-  font-weight: 700;
-  font-size: 0.85rem;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  text-decoration: none;
-  border-bottom: 2px solid #ffdea5;
-  padding-bottom: 2px;
-  transition: border-color 0.2s, color 0.2s;
-  white-space: nowrap;
-  margin-bottom: 4px;
-}
-
-.sectionLink:hover {
-  border-color: #775a19;
-  color: #775a19;
-}
-
-.carouselWrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.carouselTrack {
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  padding: 8px 4px 32px;
-  scroll-snap-type: x proximity;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.carouselTrack > * {
-  flex: 0 0 330px;
-  scroll-snap-align: start;
-}
-
-.navButton {
-  position: absolute;
-  z-index: 10;
-  background: #ffffff;
-  border: 1px solid #c4c6cf;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: #002046;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: all 0.2s;
-}
-
-.navButton:hover {
-  background: #f0eded;
-  transform: scale(1.06);
-}
-
-.navLeft { left: -22px; }
-.navRight { right: -22px; }
-
-/* Card histórico */
-.historicalCard {
-  background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid rgba(196,198,207,0.3);
-  border-top: 2px solid #ffdea5;
-  padding: 32px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  text-decoration: none;
-  color: inherit;
-  transition: box-shadow 0.25s, transform 0.25s;
-}
-
-.historicalCard:hover {
-  box-shadow: 0 12px 32px rgba(0,32,70,0.1);
-  transform: translateY(-3px);
-}
-
-.historicalAvatar {
-  width: 108px;
-  height: 108px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border: 3px solid #f0eded;
-}
-
-.historicalName {
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  font-size: 1.18rem;
-  font-weight: 700;
-  color: #002046;
-  margin: 0 0 4px;
-}
-
-.historicalDates {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #775a19;
-  margin: 0 0 12px;
-  letter-spacing: 0.03em;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-}
-
-.historicalDesc {
-  font-size: 0.9rem;
-  color: #44474e;
-  line-height: 1.6;
-  margin: 0 0 12px;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.historicalLocation {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.8rem;
-  color: #74777f;
-  margin-bottom: 18px;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-}
-
-.historicalBtn {
-  width: 100%;
-  padding: 10px;
-  border: 1.5px solid #775a19;
-  background: transparent;
-  color: #775a19;
-  border-radius: 8px;
-  font-size: 0.84rem;
-  font-weight: 600;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-
-.historicalBtn:hover {
-  background: rgba(255,222,165,0.18);
-}
-
-.emptyState {
-  width: 100%;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 28px;
-  border: 1px dashed #c4c6cf;
-  border-radius: 12px;
-  background: #f6f3f2;
-  color: #44474e;
-  font-weight: 500;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-}
-
-/* --- SEÇÃO 2: Mapa --- */
-.sectionMap {
-  padding: 96px 0;
-  background: #ffffff;
-  overflow: hidden;
-}
-
-.mapGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.mapImageWrapper {
-  position: relative;
-}
-
-.mapImageFrame {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 24px 64px rgba(0,32,70,0.12);
-  border: 2px solid transparent;
-  transition: border-color 0.4s;
-}
-
-.mapImageFrame:hover {
-  border-color: #ffdea5;
-}
-
-.mapImg {
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  display: block;
-}
-
-.mapBadge {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(8px);
-  border-radius: 10px;
-  padding: 12px 14px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  max-width: 160px;
-}
-
-.mapBadgeTitle {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #002046;
-  margin: 0 0 4px;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.mapBadgeText {
-  font-size: 0.68rem;
-  color: #44474e;
-  margin: 0;
-  line-height: 1.4;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-}
-
-.mapContent {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.mapBodyText {
-  font-size: 1rem;
-  color: #44474e;
-  line-height: 1.7;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  margin: 0;
-}
-
-.mapFeatures {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.mapFeature {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.mapFeatureIcon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255,222,165,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: #775a19;
-}
-
-.mapFeatureTitle {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: #002046;
-  margin: 0 0 2px;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-}
-
-.mapFeatureDesc {
-  font-size: 0.8rem;
-  color: #44474e;
-  margin: 0;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-}
-
-.mapCta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: #002046;
-  color: #ffffff;
-  padding: 14px 32px;
-  border-radius: 8px;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  font-size: 0.92rem;
-  font-weight: 700;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  align-self: flex-start;
-  box-shadow: 0 8px 24px rgba(0,32,70,0.2);
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-}
-
-.mapCta:hover {
-  background: #1b365d;
-  transform: translateY(-1px);
-  box-shadow: 0 12px 32px rgba(0,32,70,0.28);
-}
-
-/* --- SEÇÃO 3: Registros Recentes --- */
-.sectionRecent {
-  padding: 96px 0;
-  background: #f6f3f2;
-}
-
-.sectionHeaderCenter {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.sectionDivider {
-  width: 80px;
-  height: 3px;
-  background: #775a19;
-  margin: 16px auto 20px;
-  border-radius: 2px;
-}
-
-.sectionSubtitle {
-  font-size: 1rem;
-  color: #44474e;
-  max-width: 520px;
-  margin: 0 auto;
-  line-height: 1.6;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-}
-
-.recentGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 24px;
-}
-
-.recentCard {
-  background: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(196,198,207,0.2);
-  transition: box-shadow 0.3s, transform 0.3s;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.recentCard:hover {
-  box-shadow: 0 20px 56px rgba(0,32,70,0.12);
-  transform: translateY(-4px);
-}
-
-.recentCardImgWrapper {
-  height: 180px;
-  overflow: hidden;
-  position: relative;
-}
-
-.recentCardImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s;
-}
-
-.recentCard:hover .recentCardImg {
-  transform: scale(1.08);
-}
-
-.recentCardBadge {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  background: rgba(0,32,70,0.82);
-  backdrop-filter: blur(4px);
-  padding: 4px 10px;
-  border-radius: 100px;
-  font-size: 0.62rem;
-  font-weight: 700;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-}
-
-.recentCardBody {
-  padding: 22px 20px 20px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.recentCardName {
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #002046;
-  margin: 0 0 2px;
-}
-
-.recentCardDates {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #775a19;
-  margin: 0 0 10px;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-}
-
-.recentCardLocation {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.8rem;
-  color: #74777f;
-  margin-bottom: 12px;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-}
-
-.recentCardDesc {
-  font-style: italic;
-  font-size: 0.88rem;
-  color: rgba(68,71,78,0.85);
-  border-left: 2px solid #ffdea5;
-  padding-left: 12px;
-  line-height: 1.55;
-  margin: 0 0 16px;
-  flex: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.recentCardBtn {
-  width: 100%;
-  padding: 10px;
-  background: #f0eded;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: #002046;
-  cursor: pointer;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  transition: background 0.2s, color 0.2s;
-  text-align: center;
-}
-
-.recentCard:hover .recentCardBtn {
-  background: #002046;
-  color: #ffffff;
-}
-
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 900px) {
-  .mapGrid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .mapCta { align-self: center; }
-  .mapContent { align-items: center; text-align: center; }
-}
-
-@media (max-width: 700px) {
-  .sectionHeader {
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-    margin-bottom: 32px;
-  }
-  .navButton { display: none; }
-  .heroTitle { font-size: 2.2rem; }
-  .searchBar {
-    flex-direction: column;
-    border-radius: 16px;
-    padding: 16px;
-    align-items: stretch;
-  }
-  .searchButton { text-align: center; height: 48px; }
-}
-
-/* Home integrada: estrutura original com busca, carrosseis e mapa. */
+/* ---------------- HERO ---------------- */
 .heroIntegrated {
   position: relative;
-  min-height: 560px;
+  isolation: isolate;
+  min-height: clamp(440px, 58vh, 520px);
   display: grid;
   place-items: center;
-  padding: 80px 24px;
+  padding: 64px 24px 72px;
   overflow: visible;
 }
 
 .integratedBackground {
   position: absolute;
   inset: 0;
+  z-index: -1;
   overflow: hidden;
 }
 
@@ -773,13 +32,17 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.04);
+  object-position: center 40%;
+  filter: blur(3px) saturate(0.75) brightness(0.95);
+  transform: scale(1.08); 
 }
 
 .integratedOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(115deg, rgba(8, 57, 111, 0.86) 0%, rgba(21, 101, 192, 0.66) 52%, rgba(8, 57, 111, 0.8) 100%);
+  background:
+    linear-gradient(to bottom, rgba(8, 40, 85, 0.35) 0%, rgba(8, 40, 85, 0.2) 50%, rgba(8, 40, 85, 0.45) 100%),
+    rgba(15, 70, 140, 0.45);
 }
 
 .integratedContent {
@@ -790,22 +53,9 @@
 }
 
 .integratedHeader {
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   color: #ffffff;
-}
-
-.heroLabel,
-.sectionLabel {
-  display: block;
-  color: #ffdea5;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.heroLabel {
-  margin-bottom: 8px;
+  animation: heroRise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
 .heroTitle {
@@ -816,37 +66,52 @@
 
 .heroTitlePrefix {
   display: block;
-  margin-bottom: 6px;
-  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.92);
   font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
-  font-weight: 500;
-  letter-spacing: 0;
+  font-size: clamp(0.85rem, 1.3vw, 1.05rem);
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0, 20, 50, 0.7);
 }
 
 .heroLineStrong {
   display: block;
-  color: #ffdea5;
+  color: #ffd283;
   font-family: 'Cormorant Garamond', 'Georgia', serif;
-  font-size: clamp(4.2rem, 9vw, 6.5rem);
+  font-size: clamp(3.6rem, 7vw, 5.4rem);
   font-weight: 600;
   line-height: 0.95;
-  text-shadow: 0 10px 32px rgba(0, 25, 66, 0.42);
+  text-shadow: 0 4px 30px rgba(0, 20, 50, 0.7);
+}
+
+/* Ornamento dourado sob o título */
+.heroLineStrong::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 2px;
+  margin: 18px auto 0;
+  background: linear-gradient(90deg, transparent, #ffdea5, transparent);
 }
 
 .heroSubtitle {
   max-width: 540px;
   margin: 20px auto 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.95);
   font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-  font-size: 1.08rem;
-  font-weight: 500;
+  font-size: 1.1rem;
   line-height: 1.65;
+  text-shadow: 0 2px 14px rgba(0, 20, 50, 0.75);
 }
 
+
+/* ---------------- BUSCA ---------------- */
 .integratedSearchContainer {
   position: relative;
   z-index: 2;
+  animation: heroRise 0.9s 0.18s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
 .searchWrapper {
@@ -854,15 +119,16 @@
   align-items: center;
   gap: 12px;
   padding: 7px 8px 7px 22px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 20px 52px rgba(8, 67, 134, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 16px 40px rgba(0, 20, 50, 0.35);
 }
 
 .searchIcon {
   flex-shrink: 0;
-  color: #74777f;
+  color: #775a19;
 }
 
 .searchWrapper input {
@@ -871,6 +137,7 @@
   border: 0;
   outline: 0;
   color: #002046;
+  background: transparent;
   font: inherit;
 }
 
@@ -878,19 +145,26 @@
   display: grid;
   width: 28px;
   height: 28px;
+  flex-shrink: 0;
   place-items: center;
+  border: none;
   border-radius: 50%;
   color: #74777f;
   background: #f0eded;
+  cursor: pointer;
 }
 
 .searchButton {
   min-height: 48px;
   padding: 0 28px;
+  border: none;
   border-radius: 999px;
   color: #ffffff;
   background: #1565c0;
   font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
 .searchButton:hover {
@@ -916,11 +190,11 @@
   padding: 12px 16px;
   border-bottom: 1px solid #f0eded;
   color: #002046;
+  text-decoration: none;
 }
 
 .resultItem:hover {
   background: #fffaf0;
-  color: #002046;
 }
 
 .resultItem img {
@@ -937,11 +211,18 @@
   justify-content: center;
   gap: 8px;
   padding: 14px;
+  border: none;
   color: #002046;
   background: #f6f3f2;
   font-weight: 700;
+  cursor: pointer;
 }
 
+.viewAll:hover {
+  background: #eae8e7;
+}
+
+/* ---------------- SEÇÕES ---------------- */
 .section {
   padding: 88px 0;
   background: #fbf9f8;
@@ -949,21 +230,27 @@
 
 .sectionHeader {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
   margin-bottom: 40px;
 }
 
 .sectionLabel {
+  display: block;
   margin-bottom: 8px;
   color: #775a19;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .sectionTitle {
   margin: 0;
   color: #002046;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.2;
 }
 
 .sectionLink {
@@ -975,9 +262,17 @@
   color: #002046;
   font-size: 0.9rem;
   font-weight: 700;
+  text-decoration: none;
   white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
 }
 
+.sectionLink:hover {
+  color: #775a19;
+  border-color: #775a19;
+}
+
+/* ---------------- CARROSSEL ---------------- */
 .carouselWrapper {
   position: relative;
   display: flex;
@@ -1015,15 +310,17 @@
   color: #002046;
   background: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 }
 
 .navButton:hover {
-  color: #775a19;
-  background: #fffaf0;
+  color: #193f77;
+  background: #f0f5ff;
 }
 
-.navLeft { left: -22px; }
-.navRight { right: -22px; }
+.navLeft { left: -50px; }
+.navRight { right: -50px; }
 
 .emptyState {
   width: 100%;
@@ -1034,6 +331,7 @@
   text-align: center;
 }
 
+/* ---------------- MAPA ---------------- */
 .mapSectionBlue {
   position: relative;
   isolation: isolate;
@@ -1080,6 +378,7 @@
 }
 
 .mapPreviewBlue {
+  display: block;
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
@@ -1087,7 +386,8 @@
 
 .mapContentBlue h2 {
   margin: 0 0 16px;
-  color: #ffffff;
+  color: #ffdea5;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
   font-size: clamp(2rem, 3vw, 2.7rem);
 }
 
@@ -1113,6 +413,8 @@
   color: #002046;
   background: #ffffff;
   font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s;
 }
 
 .mapButton:hover {
@@ -1120,6 +422,7 @@
   background: #ffdea5;
 }
 
+/* ---------------- RESPONSIVO ---------------- */
 @media (max-width: 700px) {
   .heroIntegrated {
     min-height: 500px;
@@ -1167,13 +470,3 @@
     gap: 32px;
   }
 }
-
-/* Botões de ação usam o azul institucional atual. */
-.searchButton {
-  background: #1565c0;
-}
-
-.searchButton:hover {
-  background: #0d477e;
-}
-

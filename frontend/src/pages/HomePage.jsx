@@ -5,6 +5,7 @@ import MemorialCard from '../components/MemorialCard';
 import { fetchMemoriais, resolveImageUrl } from '../lib/api';
 import styles from './HomePage.module.css';
 import mapaImg from '../assets/mapaExemplo.png';
+import texturaImg from '../assets/texturaMemorial.jfif';
 
 const PLACEHOLDER_IMG = 'https://placehold.co/400x400/e4e2e1/44474e?text=Foto';
 
@@ -80,7 +81,7 @@ export default function HomePage() {
       <section className={styles.heroIntegrated}>
         <div className={styles.integratedBackground}>
           <img
-            src="https://images.pexels.com/photos/116909/pexels-photo-116909.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            src={texturaImg}
             alt="Textura Memorial"
             className={styles.integratedImage}
           />

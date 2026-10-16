@@ -9,7 +9,9 @@ import TumuloPage from "../src/pages/TumuloPage";
 import MapPage from "../src/pages/MapPage";
 import AdminDashboard from "../src/pages/Adm/AdminDashboard";
 import AdminMemoriais from "../src/pages/Adm/AdminMemoriais";
+import AdminQuadrasLotes from "../src/pages/Adm/AdminQuadrasLotes";
 import LoginPage from "./pages/LoginPage";
+import HelpPage from './pages/HelpPage';
 
 function AdminRoute({ isAuthenticated, children }) {
   const location = useLocation();
@@ -68,6 +70,7 @@ function App() {
           <Route path="tumulo/:localizacao" element={<TumuloPage />} />
           <Route path="/mapa" element={<MapPage />} />
           <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
+          <Route path="/ajuda" element={<HelpPage />} />
         </Route>
         <Route
           path="admin"
@@ -82,6 +85,14 @@ function App() {
           element={(
             <AdminRoute isAuthenticated={isAuthenticated}>
               <AdminMemoriais />
+            </AdminRoute>
+          )}
+        />
+        <Route
+          path="admin/quadraslotes"
+          element={(
+            <AdminRoute isAuthenticated={isAuthenticated}>
+              <AdminQuadrasLotes />
             </AdminRoute>
           )}
         />

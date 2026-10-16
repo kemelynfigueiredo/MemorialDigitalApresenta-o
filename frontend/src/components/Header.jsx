@@ -22,6 +22,7 @@ export default function Header({ isAuthenticated = false, onLogout }) {
     : [
         { to: '/', label: 'Início' },
         { to: '/memoriais', label: 'Memoriais' },
+        { to: '/ajuda', label: 'Ajuda' },
         { to: '/mapa', label: 'Mapa do Cemitério' },
         ...(isAuthenticated ? [{ to: '/admin', label: 'Administração' }] : []),
         ...(isAuthenticated

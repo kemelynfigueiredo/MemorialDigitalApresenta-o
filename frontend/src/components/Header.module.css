@@ -62,7 +62,7 @@
 
 .subtitle {
     font-size: 0.82rem;
-    color: #ffdea5;
+    color: #ffca6f;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -93,18 +93,15 @@
 }
 
 .navLinkActive {
-    background: #ffdea5;
+    background: #ffd283;
     color: #002046;
     box-shadow: none;
 }
 
-.navLinkActive:hover {
-    background: #ffffff;
-}
 
 .mobileMenuBtn {
     display: none;
-    background: #ffdea5;
+    background: #ffd283;
     border-radius: 4px;
     padding: 4px;
     border: none;
@@ -139,7 +136,7 @@
         opacity: 0;
         visibility: hidden;
         transition: 0.3s;
-        border-bottom: 4px solid #ffdea5;
+        border-bottom: 4px solid #ffd283;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 

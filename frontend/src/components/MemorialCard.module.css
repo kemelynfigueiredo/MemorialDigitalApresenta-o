@@ -7,7 +7,7 @@
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   border: 1px solid #eaeaea;
-  border-top: 2px solid #ce952c;
+  border-top: 2px solid #ffd283;
   text-decoration: none;
   transition: all 0.3s ease;
   text-align: center;
@@ -65,7 +65,7 @@
 
 .dates {
   font-size: 0.85rem;
-  color: #cba052;
+  color: #ffd283;
   font-weight: 600;
   margin-bottom: 12px;
   letter-spacing: 0.1em;
